@@ -8,7 +8,7 @@ int main()
     std::cout << "Current path is " << fs::current_path() << '\n';
 
     Image img;
-    img.Load("../data/Lenna.png");
+    img.Load("../data/loeche.jpg");
 
     GrayScale g;
     auto start = std::chrono::high_resolution_clock::now();
@@ -22,9 +22,9 @@ int main()
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     std::cout << "CPU Time: " << duration.count() << '\n';
     img.Destroy();
-    newImg.Write("../data/Lenna-gray.jpg", ImageType::JPG);
+    newImg.Write("../data/loeche-gray.jpg", ImageType::JPG);
     newImg.Destroy();
-    newCpuImg.Write("../data/Lenna-gray-cpu.jpeg", ImageType::JPG);
+    newCpuImg.Write("../data/loeche-gray-cpu.jpeg", ImageType::JPG);
     newCpuImg.Destroy();
     return 0;
 }

@@ -98,3 +98,21 @@ protected:
     void GpuCall() override;
 
 };
+
+class Blur : public PostProcessing
+{
+public:
+    Image CpuExecute(const Image &img) override;
+protected:
+    void GpuCall() override;
+
+};
+
+class Edge : public PostProcessing
+{
+public:
+    Image CpuExecute(const Image &img) override;
+protected:
+    void GpuCall() override;
+
+};

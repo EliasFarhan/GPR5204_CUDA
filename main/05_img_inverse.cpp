@@ -8,7 +8,7 @@ int main()
     std::cout << "Current path is " << fs::current_path() << '\n';
 
     Image img;
-    img.Load("../data/Lenna.png");
+    img.Load("../data/loeche.jpg");
 
     Inverse g;
     auto start = std::chrono::high_resolution_clock::now();
@@ -22,9 +22,9 @@ int main()
     duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
     std::cout << "CPU Time: " << duration.count() << '\n';
     img.Destroy();
-    newImg.Write("../data/Lenna-inverse.jpg", ImageType::JPG);
+    newImg.Write("../data/loeche-inverse.jpg", ImageType::JPG);
     newImg.Destroy();
-    newCpuImg.Write("../data/Lenna-inverse-cpu.jpeg", ImageType::JPG);
+    newCpuImg.Write("../data/loeche-inverse-cpu.jpg", ImageType::JPG);
     newCpuImg.Destroy();
     return 0;
 }
