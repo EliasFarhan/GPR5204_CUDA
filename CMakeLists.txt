@@ -1,13 +1,10 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 project(GPR5204_CUDA LANGUAGES CXX CUDA)
 
-
-
-include_directories(include/)
-
 file(GLOB_RECURSE GPR5204_SRC include/*.h src/*.cpp src/*.cu)
 
 add_library(COMMON STATIC ${GPR5204_SRC})
+target_include_directories(COMMON PUBLIC "${CMAKE_SOURCE_DIR}/include/")
 
 set(main_project_dir "${CMAKE_SOURCE_DIR}/main/")
 file(GLOB main_projects "${main_project_dir}/*.cpp")
